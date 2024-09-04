@@ -1,0 +1,23 @@
+<div class="dashboard-container">
+  <header>
+    <h1>Dashboard</h1>
+    <nav>
+      <a routerLink="/dashboard/view-courses" routerLinkActive="active"
+        >View Courses</a
+      >
+      <a routerLink="/dashboard/enroll-student" routerLinkActive="active"
+        >Enroll Student</a
+      >
+      <a
+        *ngIf="isAdmin"
+        routerLink="/dashboard/manage-courses"
+        routerLinkActive="active"
+        >Manage Courses</a
+      >
+      <a (click)="logout()">Logout</a>
+    </nav>
+  </header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>

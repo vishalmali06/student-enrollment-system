@@ -1,0 +1,22 @@
+<div class="courses-container">
+  <h2>Available Courses</h2>
+  <ul class="course-list">
+    <li *ngFor="let course of paginatedCourses">
+      <a [routerLink]="['/dashboard/course-details', course.id]">{{
+        course.title
+      }}</a>
+    </li>
+  </ul>
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">
+      Previous
+    </button>
+    <span>Page {{ currentPage }}</span>
+    <button
+      (click)="nextPage()"
+      [disabled]="currentPage * itemsPerPage >= courses.length"
+    >
+      Next
+    </button>
+  </div>
+</div>
